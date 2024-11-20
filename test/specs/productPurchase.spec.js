@@ -3,12 +3,14 @@ const addToCartActions = require("../pages/addToCart/addToCartActions");
 const checkoutActions = require("../pages/checkout/checkoutActions");
 const utility = require("../utilities/utility");
 
-const productName = "Nike react phantom run flyknit 2";
+var productName = "";
 var productQty;
 var singleProductPrice;
 
 describe("Demo evershop site product purchase journey", ()=>{
     it("Should able to succesfully search product", async()=>{
+        const number = await utility.randomNumber(4, 1);
+        productName = await searchActions.selectedProduct(number);
         await searchActions.clickOnSearchIcon();
         await searchActions.enterSearchItemName(productName);
         await browser.keys("Enter");
@@ -16,7 +18,8 @@ describe("Demo evershop site product purchase journey", ()=>{
 
     it("Should able to succesfully add product in the cart", async()=>{
         await addToCartActions.clickOnProductFromList(productName);
-        await addToCartActions.selectProductSize();
+        const number = await utility.randomNumber(2, 1);
+        await addToCartActions.selectProductSize(number);
         await addToCartActions.selectProductColor();
         productQty = await utility.randomNumber(10, 1);
         await addToCartActions.enterProductQty(productQty);

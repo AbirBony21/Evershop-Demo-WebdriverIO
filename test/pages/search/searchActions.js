@@ -9,11 +9,14 @@ class searchActions{
         await searchLocators.searchInputField.setValue(productName);
     }
 
-    // async search(productName){
-    //     await this.clickOnSearchIcon();
-    //     await this.enterSearchItemName(productName);
-    // }
+    async search(productName){
+        await this.clickOnSearchIcon();
+        await this.enterSearchItemName(productName);
+    }
 
+    async selectedProduct(num){
+        return await searchLocators.productList(num).getText();
+    }
 
 }
 
