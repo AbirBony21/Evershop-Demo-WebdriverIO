@@ -1,4 +1,5 @@
-const productPurchase = "./test/specs/productPurchase.spec.js"
+const productPurchase = "./test/specs/productPurchase.spec.js";
+const auth = "./test/specs/auth.spec.js";
 exports.config = {
     //
     // ====================
@@ -21,8 +22,7 @@ exports.config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [productPurchase
-    ],
+    specs: [auth],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
