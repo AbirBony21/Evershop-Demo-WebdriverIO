@@ -22,8 +22,14 @@ exports.config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [auth],
+    specs: [auth, productPurchase],
     // Patterns to exclude.
+
+    suites: {
+        purchase: [[auth, productPurchase]],
+    },
+
+
     exclude: [
         // 'path/to/excluded/files'
     ],

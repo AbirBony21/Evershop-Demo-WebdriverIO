@@ -2,6 +2,8 @@ const searchActions = require("../pages/search/searchActions");
 const addToCartActions = require("../pages/addToCart/addToCartActions");
 const checkoutActions = require("../pages/checkout/checkoutActions");
 const utility = require("../utilities/utility");
+const loginActions = require("../pages/login/loginActions");
+
 
 var productName = "";
 var productQty;
@@ -34,5 +36,11 @@ describe("Demo evershop site product purchase journey", ()=>{
         const actualGrandTotal = await checkoutActions.getGrandTotalAmount();
         expect(expectedTotalPrice).toEqual(actualSubTotal);
         expect(expectedTotalPrice).toEqual(actualGrandTotal);
+    });
+
+    it("Should able to succesfully logout", async()=>{
+        await loginActions.clickOnProfileIcon();
+        await loginActions.clickOnLogout();
+        await browser.pause(5000);
     });
 });
