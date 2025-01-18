@@ -1,7 +1,7 @@
 
 class SignupLocators{
     get fullNameInputField(){
-        return $("//input[@name='full_name']");
+        return $("//input[@name='full']");
     }
 
     get createAccountLink(){
