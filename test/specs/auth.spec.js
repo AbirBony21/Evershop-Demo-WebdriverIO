@@ -6,7 +6,7 @@ var fullName = "";
 var email = "";
 var password = "";
 
-describe("Demo evershop site product purchase journey", ()=>{
+describe("Demo evershop site authentication journey", ()=>{
 
     it("Should able to succesfully register", async()=>{
         await loginActions.clickOnProfileIcon();

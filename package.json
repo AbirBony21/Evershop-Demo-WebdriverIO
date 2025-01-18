@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
-    "runPurchase": "wdio run ./wdio.conf.js --suite purchase"
+    "purchase": "wdio run ./wdio.conf.js --suite purchase",
+    "getReport": "allure generate allure-results --clean && allure open"
   },
   "keywords": [
     "wdio",
@@ -14,8 +15,12 @@
   "author": "md_abir_hossain_bony",
   "license": "ISC",
   "devDependencies": {
+    "@wdio/allure-reporter": "^9.2.14",
     "@wdio/cli": "^9.2.14",
     "@wdio/local-runner": "^9.2.15",
     "@wdio/mocha-framework": "^9.2.8"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.32.0"
   }
 }
